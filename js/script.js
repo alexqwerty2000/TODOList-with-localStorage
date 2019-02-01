@@ -1,6 +1,18 @@
 
 let taskList = [];
 
+if(localStorage.getItem('todo') != undefined){
+   taskList = JSON.parse(localStorage.getItem('todo'))
+   for(let key = 0; key < taskList.length; key++){
+        let {todo,checked} = {...taskList[key]};
+        let li = document.createElement('LI');
+        let textNode = document.createTextNode(todo);
+        li.appendChild(textNode);
+        document.getElementById('taskList').appendChild(li);
+        document.getElementById('myInput').value = "";
+    }
+}
+
 let outTask = () => {
     let li = document.createElement('LI');
     let index = taskList.length;
@@ -9,17 +21,6 @@ let outTask = () => {
     li.appendChild(textNode);
     document.getElementById('taskList').appendChild(li);
     document.getElementById('myInput').value = "";
-}
-
-if(localStorage.getItem('todo') != undefined){
-   taskList = JSON.parse(localStorage.getItem('todo'))
-   for(let key = 0; key < taskList.length; key++){
-       let task = {};
-       let {todo, checked} = {...taskList[key]};
-       outTask();
-       console.log(todo);
-       console.log(checked);
-   }
 }
 
 let addNewTask = () => {
