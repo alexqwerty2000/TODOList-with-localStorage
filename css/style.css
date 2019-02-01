@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1200px;
+    position: relative;
+}
+.todolist{
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top:20%;
+    transform: translate(-50%, -50%);
+}
+.addNewTask{
+   padding: 16px 12px;
+}
+input{
+    width: 73%;
+    font-size: 16px;
+    line-height: 26px;
+}
+button{
+    width:25%;
+    font-size:16px;
+    line-height: 26px;
+}
+button:hover{
+    background-color: #999;
+}
+.todolist{
+    background-color: #34bd84;
+}
+ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 12px 10px;
+    list-style-type: none;
+    background-color: #eee;
+    font-size: 16px;
+    transition: 0.5s;
+    text-align: center;
+    user-select: none;
+}
+ul li:nth-child(odd){
+    background-color: #f9f9f9;
+}
+ul li:hover{
+    background-color: #999999;
+}
+.checked{
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    content:'';
+    position: absolute;
+    border-color: #000;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    top: 10px;
+    left: 20px;
+    transform: rotate(45deg);
+    width: 7px;
+    height: 15px;
+}
+.close{
+    font-size: 26px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.close:hover{
+    font-weight: bold;
+}
