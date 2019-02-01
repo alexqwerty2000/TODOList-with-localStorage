@@ -11,16 +11,16 @@ let outTask = () => {
     document.getElementById('myInput').value = "";
 }
 
-// if(localStorage.getItem('todo') != undefined){
-//    taskList = JSON.parse(localStorage.getItem('todo'))
-//    for(let key = 0; key < taskList.length; key++){
-//        let task = {};
-//        let {todo, checked} = {...taskList[key]};
-//        outTask();
-//        console.log(todo);
-//        console.log(checked);
-//    }
-// }
+if(localStorage.getItem('todo') != undefined){
+   taskList = JSON.parse(localStorage.getItem('todo'))
+   for(let key = 0; key < taskList.length; key++){
+       let task = {};
+       let {todo, checked} = {...taskList[key]};
+       outTask();
+       console.log(todo);
+       console.log(checked);
+   }
+}
 
 let addNewTask = () => {
     let newTask = document.getElementById('myInput').value;
@@ -43,9 +43,5 @@ list.addEventListener('click', function(event) {
     }
 }, false);
 
-
-// let deleteTask = () => {
-//     document.getElementsByClassName
-// }
     
 
